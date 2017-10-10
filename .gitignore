@@ -1,0 +1,8 @@
+/bin/
+/target/
+.classpath
+.project
+.jsdtscope
+.idea
+.settings
+/projet-modele.iml
