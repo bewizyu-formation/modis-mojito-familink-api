@@ -32,6 +32,7 @@ public class ContactServiceRepository implements IContactService {
 			toUpdate.setPrenom(contact.getPrenom());
 			toUpdate.setProfil(contact.getProfil());
 			toUpdate.setGravatar(contact.getGravatar());
+			toUpdate.setGroup(contact.getGroup());
 			contactRepository.save(toUpdate);
 		}
 	}
