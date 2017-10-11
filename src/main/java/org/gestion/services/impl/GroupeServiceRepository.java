@@ -28,6 +28,7 @@ public class GroupeServiceRepository implements IGroupeService {
 		
 		if (toUpdate != null) {
 			toUpdate.setName(groupe.getName());
+			
 			groupeRepository.save(toUpdate);
 		}
 
