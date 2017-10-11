@@ -5,6 +5,8 @@ import java.util.Set;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity
 public class Groupe {
 
@@ -19,6 +21,7 @@ public class Groupe {
 	@JoinColumn(name="OWNERUSER_ID")
 	private User owner;
 	
+	@JsonIgnore
 	@OneToMany(mappedBy="groupe")
 	private Set<Contact> contacts = new HashSet<Contact>();
 

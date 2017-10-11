@@ -155,7 +155,7 @@
 		<profile>
 			<id>dev-h2</id>
 			<activation>
-				<activeByDefault>true</activeByDefault>
+				<activeByDefault>false</activeByDefault>
 			</activation>
 			<properties>
 				<jdbc.driver>org.h2.Driver</jdbc.driver>
@@ -170,13 +170,13 @@
 		<profile>
 			<id>dev-mysql</id>
 			<activation>
-				<activeByDefault>false</activeByDefault>
+				<activeByDefault>true</activeByDefault>
 			</activation>
 			<properties>
 				<jdbc.driver>com.mysql.jdbc.Driver</jdbc.driver>
-				<jdbc.url>jdbc:mysql://localhost:3306/spring-test?useSSL=false</jdbc.url>
+				<jdbc.url>jdbc:mysql://localhost:3306/family-link?useSSL=false</jdbc.url>
 				<jdbc.user>root</jdbc.user>
-				<jdbc.pass></jdbc.pass>
+				<jdbc.pass>1234</jdbc.pass>
 				<jpa.hibernate.ddl>create-drop</jpa.hibernate.ddl>
 				<jdbc.dialect>org.hibernate.dialect.MySQL5InnoDBDialect</jdbc.dialect>
 				<jdbc.connections.max.active>5</jdbc.connections.max.active>
