@@ -14,42 +14,29 @@ import org.springframework.stereotype.Service;
 /**
  * @author FloRod
  */
-@Service(value= "userServiceRepository")
+@Service(value = "userServiceRepository")
 public class UserServiceRepository implements IUserService {
-	
+
 	@Autowired
 	private UserRepository userRepository;
-	
-	@Autowired
-	private CoordonneesRepository coordonneesRepository;
-	
-	@Autowired
-	private ContactRepository contactRepository;
 
 	@Override
 	public User create(User nouveauUser) {
-		nouveauUser.setPassword(DigestUtils.md5Hex(nouveauUser.getPassword()));
-		coordonneesRepository.save(nouveauUser.getContact().getCoordonnees());
-		contactRepository.save(nouveauUser.getContact());
 		return userRepository.save(nouveauUser);
-		
+
 	}
 
 	@Override
 	public void update(User user) {
 		final User toUpdate = userRepository.findOne(user.getId());
-		
-		if(toUpdate != null){
+		if (toUpdate != null) {
 			toUpdate.setContact(user.getContact());
-			toUpdate.setPassword(DigestUtils.md5Hex(toUpdate.getPassword()));
-			coordonneesRepository.save(toUpdate.getContact().getCoordonnees());
-			contactRepository.save(toUpdate.getContact());
+			toUpdate.setPassword(toUpdate.getPassword());
 			userRepository.save(toUpdate);
 		}
 
 	}
 
-	
 	@Override
 	public List<User> getUsers() {
 		return userRepository.findAll();

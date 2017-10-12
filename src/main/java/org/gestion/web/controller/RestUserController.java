@@ -4,9 +4,12 @@ import java.util.List;
 
 import org.gestion.entite.User;
 import org.gestion.services.IUserService;
+import org.gestion.utils.Tokens;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -45,11 +48,11 @@ public class RestUserController {
 		userServiceRepository.update(userUpdated);
 	}
 	
-	// ******** AUTHENTICATION ******* //
-	
-	@RequestMapping(path = "/login", method = RequestMethod.POST, consumes = "application/json;charset=UTF-8")
-	public void authenticateUser(@RequestBody User user) {
-		 
+	@RequestMapping(path = "/", method = RequestMethod.DELETE)
+	@ResponseBody
+	public void deleteUser(@RequestHeader String token) {
+		Integer idUser = Tokens.getIdFromToken(token);
+		userServiceRepository.deleteUser(idUser);
 	}
 	
 	
