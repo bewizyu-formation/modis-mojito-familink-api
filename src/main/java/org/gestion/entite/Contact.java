@@ -15,10 +15,11 @@ public class Contact {
 	@Column(name= "FIRSTNAME", nullable= false, length=30)
 	private String firstName;
 	
-	@Column(name= "PROFIL")
+	@OneToOne//(cascade={CascadeType.PERSIST})
+	@JoinColumn(name= "PROFIL_ID")
 	private Profil profil;
 	
-	@OneToOne
+	@OneToOne(cascade={CascadeType.ALL})
 	@JoinColumn(name= "COORDONNEES_ID")
 	private Coordonnees coordonnees;
 	

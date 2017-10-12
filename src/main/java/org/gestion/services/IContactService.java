@@ -3,6 +3,7 @@ package org.gestion.services;
 import java.util.List;
 
 import org.gestion.entite.Contact;
+import org.gestion.entite.Groupe;
 
 /**
  * Interface qui liste les méthodes de persistence pour la classe {@link Contact} que doit posséder une classe
@@ -32,7 +33,7 @@ public interface IContactService {
 	 *
 	 * @return
 	 */
-	List<Contact> getContacts();
+	List<Contact> getContacts(int groupeId);
 
 	/**
 	 * Récupération d'un contact par son id
