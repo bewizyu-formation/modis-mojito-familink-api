@@ -11,9 +11,9 @@ import org.springframework.stereotype.Service;
 /**
  * @author FloRod
  */
-@Service(value= "userServiceRepository")
+@Service(value = "userServiceRepository")
 public class UserServiceRepository implements IUserService {
-	
+
 	@Autowired
 	private UserRepository userRepository;
 
@@ -47,7 +47,6 @@ public class UserServiceRepository implements IUserService {
 	@Override
 	public void deleteUser(int id) {
 		userRepository.delete(id);
-
 	}
 
 }

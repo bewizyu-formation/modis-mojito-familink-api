@@ -1,6 +1,5 @@
 package org.gestion.services.impl;
 
-
 import org.gestion.entite.Contact;
 import org.gestion.entite.Coordonnees;
 import org.gestion.entite.Groupe;
@@ -24,7 +23,7 @@ public class InitializeService implements IInitializeService {
 	
 	@Autowired
 	private UserServiceRepository userServiceRepository;
-	
+
 	@Autowired
 	private ProfilServiceRepository profilServiceRepository;
 
@@ -127,8 +126,6 @@ public class InitializeService implements IInitializeService {
 		//contactServiceRepository.create(contact7);
 		User user3 = new User(contact7, "passeword 3");
 		userServiceRepository.create(user3);
-		
-		
 
 	}
 

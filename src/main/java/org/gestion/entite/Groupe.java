@@ -19,6 +19,7 @@ public class Groupe {
 	@JoinColumn(name="OWNERUSER_ID")
 	private User owner;
 
+
 	/**
 	 * 
 	 */

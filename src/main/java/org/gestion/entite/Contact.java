@@ -12,6 +12,7 @@ public class Contact {
 	@Column(name= "LASTNAME", nullable= false, length=30)
 	private String lastName;
 	
+	
 	@Column(name= "FIRSTNAME", nullable= false, length=30)
 	private String firstName;
 	
