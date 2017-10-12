@@ -38,8 +38,8 @@ public class ContactServiceRepository implements IContactService {
 	}
 
 	@Override
-	public List<Contact> getContacts() {
-		return contactRepository.findAll();
+	public List<Contact> getContacts(int groupeId) {
+		return contactRepository.findByGroupId(groupeId);
 	}
 
 	@Override

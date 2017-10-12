@@ -32,7 +32,7 @@ public interface IContactService {
 	 *
 	 * @return
 	 */
-	List<Contact> getContacts();
+	List<Contact> getContacts(int groupeId);
 
 	/**
 	 * Récupération d'un contact par son id

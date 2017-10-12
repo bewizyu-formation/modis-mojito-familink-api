@@ -1,12 +1,6 @@
 package org.gestion.entite;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
+import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -24,10 +18,7 @@ public class Groupe {
 	@OneToOne
 	@JoinColumn(name="OWNERUSER_ID")
 	private User owner;
-	
-//	@JsonIgnore
-//	@OneToMany(mappedBy="groupe")
-//	private Set<Contact> contacts = new HashSet<Contact>();
+
 
 	/**
 	 * 
@@ -43,7 +34,6 @@ public class Groupe {
 	public Groupe(String name, User owner) {
 		this.name = name;
 		this.owner = owner;
-
 	}
 
 	/**
@@ -73,15 +63,6 @@ public class Groupe {
 	public void setOwner(User owner) {
 		this.owner = owner;
 	}
-
-	/**
-	 * @return the contacts
-	 */
-
-	/**
-	 * @param contacts the contacts to set
-	 */
-
 
 	/**
 	 * @return the id

@@ -9,7 +9,7 @@ public class User {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
-	@OneToOne
+	@OneToOne(cascade={CascadeType.ALL})
 	@JoinColumn(name="CONTACT_ID")
 	private Contact contact;
 	

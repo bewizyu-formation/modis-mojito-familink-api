@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/groups/{idGroup}") // {idGroup}/
+@RequestMapping("/groups/{idGroup}")
 public class RestContactController {
 
 	@Autowired
@@ -25,8 +25,8 @@ public class RestContactController {
 
 	@RequestMapping(path = "/contacts", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	@ResponseBody
-	public List<Contact> getContacts() {
-		return contactServiceRepository.getContacts();
+	public List<Contact> getContacts(@PathVariable("idGroup") String idGroup) {
+		return contactServiceRepository.getContacts(Integer.parseInt(idGroup));
 	}
 	
 	// ******* GET CONTACT BY ID ********** //
