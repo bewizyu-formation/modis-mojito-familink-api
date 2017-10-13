@@ -16,14 +16,14 @@ public interface IGroupeService {
 	 * Sauvegarde un nouveau groupe
 	 *
 	 * @param nouveauGroupe nouveau groupe
-<<<<<<< HEAD
+
 	 * @param token 
 	 */
 	Groupe create(Groupe nouveauGroupe, Integer token);
-=======
-	 */
-	Groupe create(Groupe nouveauGroupe);
->>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
+
+
+
+
 
 	/**
 	 * Mise à jour d'un groupe

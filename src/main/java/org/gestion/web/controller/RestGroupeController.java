@@ -4,18 +4,16 @@ import java.util.List;
 
 import org.gestion.entite.Groupe;
 import org.gestion.services.IGroupeService;
-<<<<<<< HEAD
+
 import org.gestion.utils.Tokens;
-=======
->>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
-<<<<<<< HEAD
+
 import org.springframework.web.bind.annotation.RequestHeader;
-=======
->>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
+
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -49,15 +47,12 @@ public class RestGroupeController {
 	// ****** TODO 1 GROUPE PER USER MAX ******* //
 	
 	@RequestMapping(path = "/", method = RequestMethod.POST, consumes = "application/json;charset=UTF-8")
-<<<<<<< HEAD
+
 	public Groupe createGroupe(@RequestBody Groupe newGroupe, @RequestHeader String Authorization) {
 		Integer idUser = Tokens.getIdFromToken(Authorization);
 		System.out.println("##############################################################################################"+idUser);
 		return groupeServiceRepository.create(newGroupe,idUser);
-=======
-	public Groupe createGroupe(@RequestBody Groupe newGroupe) {
-		return groupeServiceRepository.create(newGroupe);
->>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
+
 	}
 	
 	// ********** UPDATE GROUPE ********** //

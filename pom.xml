@@ -142,7 +142,6 @@
 			<artifactId>commons-codec</artifactId>
 			<version>1.4</version>
 		</dependency>
-<<<<<<< HEAD
 		<!-- Json -->
 		<dependency>
 			<groupId>org.json</groupId>
@@ -150,8 +149,7 @@
 			<version>20170516</version>
 		</dependency>
 
-=======
->>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
+
 
 
 	</dependencies>
