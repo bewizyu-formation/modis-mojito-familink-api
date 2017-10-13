@@ -35,7 +35,7 @@ public class RestUserController {
 
 	// ********** CREATE USER ********** //
 
-	@RequestMapping(path = "/", method = RequestMethod.POST, consumes = "application/json;charset=UTF-8")
+	@RequestMapping(path = "/create", method = RequestMethod.POST, consumes = "application/json;charset=UTF-8")
 	public User createUser(@RequestBody User newUser) {
 		return userServiceRepository.create(newUser);
 	}
