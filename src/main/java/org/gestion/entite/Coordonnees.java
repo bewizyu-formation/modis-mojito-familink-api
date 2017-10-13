@@ -21,7 +21,7 @@ public class Coordonnees {
 	@Column(name= "PHONE", nullable= false, length=20)
 	private String phone;
 	
-	@Column(name= "EMAIL", nullable= false, length=40)
+	@Column(name= "EMAIL", nullable= false, length=40, unique = true)
 	private String email;
 
 	/**

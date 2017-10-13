@@ -13,7 +13,7 @@ public class User {
 	@JoinColumn(name="CONTACT_ID")
 	private Contact contact;
 	
-	@Column(name="PASSWORD", nullable= false, length = 120)
+	@Column(name="PASSWORD", nullable = false, length = 120)
 	private String password;
 
 	/**
