@@ -24,7 +24,10 @@ public class StartUpController {
 		//code exécuté une fois que le contexte Spring est chargé
 		LOGGER.info("Initialisation des données");
 		System.out.println("ça marche !!!!!!!!!!!!!!!!!!!!!!!!!");
+<<<<<<< HEAD
 
+=======
+>>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
 		
 		initService.initialize();
 	}

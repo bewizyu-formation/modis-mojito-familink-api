@@ -33,6 +33,7 @@ public class Tokens {
 		System.out.println(parts[1]);
 		return timeStamp;
 	}
+<<<<<<< HEAD
 	
 	public static Boolean isValid(String token){
 		if(Date.getTimeUnix()>Tokens.getTimeStampFromToken(token)){
@@ -40,4 +41,7 @@ public class Tokens {
 		}
 		else {return false;}
 	}
+=======
+
+>>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
 }

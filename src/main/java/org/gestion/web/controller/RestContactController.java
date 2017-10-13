@@ -14,7 +14,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+<<<<<<< HEAD
 @RequestMapping("/groups/{idGroup}")
+=======
+@RequestMapping("/groups/{idGroup}") // {idGroup}/
+>>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
 public class RestContactController {
 
 	@Autowired
@@ -25,8 +29,13 @@ public class RestContactController {
 
 	@RequestMapping(path = "/contacts", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	@ResponseBody
+<<<<<<< HEAD
 	public List<Contact> getContacts(@PathVariable("idGroup") String idGroup) {
 		return contactServiceRepository.getContacts(Integer.parseInt(idGroup));
+=======
+	public List<Contact> getContacts() {
+		return contactServiceRepository.getContacts();
+>>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
 	}
 	
 	// ******* GET CONTACT BY ID ********** //

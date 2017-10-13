@@ -10,8 +10,11 @@ public interface UserRepository extends JpaRepository<User, Integer> {
 			+ "(select id from contact where COORDONNEES_ID = "
 			+ "(select id from coordonnees where email = ?1))", nativeQuery = true)
 	String findPasswordByEmail(String email);
+<<<<<<< HEAD
 	
 	@Query(value = "select id FROM user where password = ?1", nativeQuery = true)
 	Integer findIdUserByPassword(String password);
+=======
+>>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
 
 }

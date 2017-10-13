@@ -38,8 +38,13 @@ public class ContactServiceRepository implements IContactService {
 	}
 
 	@Override
+<<<<<<< HEAD
 	public List<Contact> getContacts(int groupeId) {
 		return contactRepository.findByGroupId(groupeId);
+=======
+	public List<Contact> getContacts() {
+		return contactRepository.findAll();
+>>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
 	}
 
 	@Override
@@ -52,9 +57,12 @@ public class ContactServiceRepository implements IContactService {
 		contactRepository.delete(id);
 	}
 
+<<<<<<< HEAD
 	@Override
 	public void deleteByGroupId(int id) {
 		contactRepository.deleteByGroupId(id);		
 	}
 
+=======
+>>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
 }

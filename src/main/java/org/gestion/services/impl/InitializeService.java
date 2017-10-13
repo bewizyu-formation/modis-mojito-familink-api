@@ -3,7 +3,10 @@ package org.gestion.services.impl;
 import org.gestion.entite.Contact;
 import org.gestion.entite.Coordonnees;
 import org.gestion.entite.Groupe;
+<<<<<<< HEAD
 import org.gestion.entite.Profil;
+=======
+>>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
 import org.gestion.entite.User;
 import org.gestion.services.IInitializeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,7 @@ public class InitializeService implements IInitializeService {
 	@Autowired
 	private UserServiceRepository userServiceRepository;
 
+<<<<<<< HEAD
 	@Autowired
 	private ProfilServiceRepository profilServiceRepository;
 
@@ -126,6 +130,14 @@ public class InitializeService implements IInitializeService {
 		//contactServiceRepository.create(contact7);
 		User user3 = new User(contact7, "passeword 3");
 		userServiceRepository.create(user3);
+=======
+	@Override
+	public void initialize() {
+
+
+
+
+>>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
 
 	}
 

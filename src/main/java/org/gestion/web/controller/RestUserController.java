@@ -7,6 +7,10 @@ import org.gestion.services.IUserService;
 import org.gestion.utils.Tokens;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+<<<<<<< HEAD
+=======
+import org.springframework.web.bind.annotation.PathVariable;
+>>>>>>> 76b3b8ad9c9a002dc3c028b1dfcc87f4c9f818fe
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
