@@ -16,7 +16,7 @@ public class Contact {
 	@Column(name= "FIRSTNAME", nullable= false, length=30)
 	private String firstName;
 	
-	@OneToOne//(cascade={CascadeType.PERSIST})
+	@OneToOne
 	@JoinColumn(name= "PROFIL_ID")
 	private Profil profil;
 	
