@@ -46,7 +46,7 @@ public class WebAppConfig {
 			
 			@Override
 			public void addInterceptors(InterceptorRegistry registry) {
-				registry.addInterceptor(getValidationInterceptor()).excludePathPatterns("/user/"); //à changer, page de login
+				registry.addInterceptor(getValidationInterceptor()).excludePathPatterns("/login").excludePathPatterns("/user/create"); //à changer, page de login
 			}
 		};
 	}
