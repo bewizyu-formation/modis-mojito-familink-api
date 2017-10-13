@@ -52,4 +52,9 @@ public class ContactServiceRepository implements IContactService {
 		contactRepository.delete(id);
 	}
 
+	@Override
+	public void deleteByGroupId(int id) {
+		contactRepository.deleteByGroupId(id);		
+	}
+
 }

@@ -11,5 +11,8 @@ public interface ContactRepository extends JpaRepository<Contact, Integer> {
 	@Query(value = "SELECT * FROM contact WHERE GROUPE_ID = ?1", nativeQuery = true)
 	List<Contact> findByGroupId(int groupeId);
 	
+	@Query(value = "DROP * FROM contact WHERE GROUPE_ID = ?1", nativeQuery = true)
+	void deleteByGroupId(int groupeId);
 
 }
+

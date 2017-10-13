@@ -16,8 +16,9 @@ public interface IGroupeService {
 	 * Sauvegarde un nouveau groupe
 	 *
 	 * @param nouveauGroupe nouveau groupe
+	 * @param token 
 	 */
-	Groupe create(Groupe nouveauGroupe);
+	Groupe create(Groupe nouveauGroupe, Integer token);
 
 	/**
 	 * Mise à jour d'un groupe

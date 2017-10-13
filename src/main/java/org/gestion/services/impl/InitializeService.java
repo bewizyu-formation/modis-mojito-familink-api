@@ -74,7 +74,7 @@ public class InitializeService implements IInitializeService {
 		//création du groupe par l'utilisateur1
 		Groupe groupe1 = new Groupe("Groupe 1", user1);
 		contact1.setGroup(groupe1);
-		groupeServiceRepository.create(groupe1);
+		groupeServiceRepository.create(groupe1,user1.getId());
 		contactServiceRepository.update(contact1); // ajout par défaut du contact du propriétaire du groupe dans le groupe
 		
 		//ajout d'un nouveau contact par l'utilisateur1 dans le groupe
@@ -102,7 +102,7 @@ public class InitializeService implements IInitializeService {
 		//création du groupe par l'utilisateur2
 		Groupe groupe2 = new Groupe("Groupe 2", user2);
 		contact4.setGroup(groupe2);
-		groupeServiceRepository.create(groupe2);
+		groupeServiceRepository.create(groupe2,user2.getId());
 		contactServiceRepository.update(contact4); // ajout par défaut du contact du propriétaire du groupe dans le groupe
 		
 		//ajout d'un nouveau contact par l'utilisateur2 dans le groupe

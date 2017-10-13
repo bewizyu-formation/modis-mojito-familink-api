@@ -47,5 +47,11 @@ public interface IContactService {
 	 */
 	void deleteContact(final int id);
 	
+	/**
+	 * Suppression de tous les contacts d'un groupe
+	 * @param id
+	 */
+	void deleteByGroupId(final int id);
+	
 
 }

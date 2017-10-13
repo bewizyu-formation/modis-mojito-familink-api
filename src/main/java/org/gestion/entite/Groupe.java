@@ -1,5 +1,7 @@
 package org.gestion.entite;
 
+import java.util.Set;
+
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,6 +20,8 @@ public class Groupe {
 	@OneToOne
 	@JoinColumn(name="OWNERUSER_ID")
 	private User owner;
+	
+
 
 
 	/**
