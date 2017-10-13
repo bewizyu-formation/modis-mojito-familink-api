@@ -2,7 +2,6 @@ package org.gestion.web.controller;
 
 
 import org.gestion.entite.Login;
-import org.gestion.entite.User;
 import org.gestion.repository.UserRepository;
 import org.gestion.utils.Tokens;
 import org.json.JSONObject;
