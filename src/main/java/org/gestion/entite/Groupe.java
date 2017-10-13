@@ -32,7 +32,6 @@ public class Groupe {
 	private User owner;
 	
 
-
 	/**
 	 * 
 	 */

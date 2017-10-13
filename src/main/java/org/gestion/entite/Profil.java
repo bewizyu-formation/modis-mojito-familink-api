@@ -8,10 +8,12 @@ public class Profil {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	//MEDECIN, FAMILLE, INFIRMIERE
 	
 	@Column(name="PROFIL_NAME")
 	private String profilName;
+	
+	@Column(name="COLOR")
+	private String color;
 	
 	/**
 	 * 
@@ -22,8 +24,9 @@ public class Profil {
 	/**
 	 * @param profilName
 	 */
-	public Profil(String profilName) {
+	public Profil(String profilName, String color) {
 		this.profilName = profilName;
+		this.color = color;
 	}
 
 	/**
@@ -45,6 +48,20 @@ public class Profil {
 	 */
 	public Integer getId() {
 		return id;
+	}
+
+	/**
+	 * @return the color
+	 */
+	public String getColor() {
+		return color;
+	}
+
+	/**
+	 * @param color the color to set
+	 */
+	public void setColor(String color) {
+		this.color = color;
 	}
 	
 	
