@@ -46,7 +46,7 @@ public class RestLoginController {
 			unJson.put("token", Tokens.generateToken(idUser));
 			return new ResponseEntity<String>(unJson.toString(), headers, HttpStatus.ACCEPTED);
 		}
-		// ********** CHECK PASSWORD ********** //
+		// ********** PASSWORD PASSWORD ********** //
 		else {
 			unJson.put("description", "invalid Password");
 			unJson.put("login", "failed");
