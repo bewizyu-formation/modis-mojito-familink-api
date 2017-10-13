@@ -3,7 +3,9 @@ package org.gestion.services.impl;
 import org.gestion.entite.Contact;
 import org.gestion.entite.Coordonnees;
 import org.gestion.entite.Groupe;
+
 import org.gestion.entite.Profil;
+
 import org.gestion.entite.User;
 import org.gestion.services.IInitializeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -46,7 +48,7 @@ public class InitializeService implements IInitializeService {
 		//création du groupe par l'utilisateur1
 		Groupe groupe1 = new Groupe("Groupe 1", user1);
 		contact1.setGroup(groupe1);
-		groupeServiceRepository.create(groupe1);
+		groupeServiceRepository.create(groupe1,user1.getId());
 		contactServiceRepository.update(contact1); // ajout par défaut du contact du propriétaire du groupe dans le groupe
 		
 		//ajout d'un nouveau contact par l'utilisateur1 dans le groupe
@@ -70,7 +72,7 @@ public class InitializeService implements IInitializeService {
 		//création du groupe par l'utilisateur2
 		Groupe groupe2 = new Groupe("Groupe 2", user2);
 		contact4.setGroup(groupe2);
-		groupeServiceRepository.create(groupe2);
+		groupeServiceRepository.create(groupe2,user2.getId());
 		contactServiceRepository.update(contact4); // ajout par défaut du contact du propriétaire du groupe dans le groupe
 		
 		//ajout d'un nouveau contact par l'utilisateur2 dans le groupe
@@ -90,6 +92,7 @@ public class InitializeService implements IInitializeService {
 		Contact contact7 = new Contact("nom 7", "prenom 7", profil2, coordonnees7, "lien7");
 		User user3 = new User(contact7, "passeword 3");
 		userServiceRepository.create(user3);
+
 
 	}
 

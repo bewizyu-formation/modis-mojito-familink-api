@@ -11,9 +11,9 @@ import org.gestion.repository.ContactRepository;
 /**
  * @author FloRod
  */
-@Service(value= "contactServiceRepository")
+@Service(value = "contactServiceRepository")
 public class ContactServiceRepository implements IContactService {
-	
+
 	@Autowired
 	private ContactRepository contactRepository;
 
@@ -25,8 +25,8 @@ public class ContactServiceRepository implements IContactService {
 	@Override
 	public void update(Contact contact) {
 		final Contact toUpdate = contactRepository.findOne(contact.getId());
-		
-		if (toUpdate != null){
+
+		if (toUpdate != null) {
 			toUpdate.setCoordonnees(contact.getCoordonnees());
 			toUpdate.setNom(contact.getNom());
 			toUpdate.setPrenom(contact.getPrenom());
@@ -40,6 +40,7 @@ public class ContactServiceRepository implements IContactService {
 	@Override
 	public List<Contact> getContacts(int groupeId) {
 		return contactRepository.findByGroupId(groupeId);
+
 	}
 
 	@Override
@@ -50,6 +51,11 @@ public class ContactServiceRepository implements IContactService {
 	@Override
 	public void deleteContact(int id) {
 		contactRepository.delete(id);
+	}
+
+	@Override
+	public void deleteByGroupId(int id) {
+		contactRepository.deleteByGroupId(id);
 	}
 
 }

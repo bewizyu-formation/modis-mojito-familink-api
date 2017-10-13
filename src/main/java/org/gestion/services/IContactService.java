@@ -32,7 +32,11 @@ public interface IContactService {
 	 *
 	 * @return
 	 */
+
 	List<Contact> getContacts(int groupeId);
+
+
+
 
 	/**
 	 * Récupération d'un contact par son id
@@ -47,5 +51,13 @@ public interface IContactService {
 	 */
 	void deleteContact(final int id);
 	
+
+	/**
+	 * Suppression de tous les contacts d'un groupe
+	 * @param id
+	 */
+	void deleteByGroupId(final int id);
+	
+
 
 }

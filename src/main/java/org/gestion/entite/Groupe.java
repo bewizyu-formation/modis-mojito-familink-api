@@ -1,8 +1,20 @@
 package org.gestion.entite;
 
-import javax.persistence.*;
+
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
+
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+
+
 
 @Entity
 public class Groupe {
@@ -18,6 +30,7 @@ public class Groupe {
 	@OneToOne
 	@JoinColumn(name="OWNERUSER_ID")
 	private User owner;
+	
 
 	/**
 	 * 
@@ -33,6 +46,7 @@ public class Groupe {
 	public Groupe(String name, User owner) {
 		this.name = name;
 		this.owner = owner;
+
 	}
 
 	/**
@@ -64,6 +78,7 @@ public class Groupe {
 	}
 
 	/**
+
 	 * @return the id
 	 */
 	public Integer getId() {

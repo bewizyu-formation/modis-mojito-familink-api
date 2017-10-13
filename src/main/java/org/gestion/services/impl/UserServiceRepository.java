@@ -20,12 +20,12 @@ public class UserServiceRepository implements IUserService {
 	@Override
 	public User create(User nouveauUser) {
 		return userRepository.save(nouveauUser);
+
 	}
 
 	@Override
 	public void update(User user) {
 		final User toUpdate = userRepository.findOne(user.getId());
-		
 		if(toUpdate != null){
 			toUpdate.setContact(user.getContact());
 			toUpdate.setPassword(user.getPassword());
