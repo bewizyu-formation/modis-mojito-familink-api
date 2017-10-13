@@ -19,20 +19,7 @@ public class RestLoginController {
 	@Qualifier("userRepository")
 	private UserRepository userRepository;
 	
-	@RequestMapping(path = "/", method = RequestMethod.POST, consumes = "application/json;charset=UTF-8")
-	public String authenticateUser(@RequestBody User unUser) {
-		
-		String dbPassword = userRepository.findPasswordByEmail(unUser.getContact().getCoordonnees().getEmail());
-		if (unUser.getPassword() == dbPassword){
-			return Tokens.generateToken(unUser.getId());
-		}
-		else {
-			return null;
-			
-		}
-		//return @Respo
-		
-	}
+
 	
 
 }
