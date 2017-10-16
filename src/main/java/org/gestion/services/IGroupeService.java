@@ -13,13 +13,13 @@ import org.gestion.entite.Groupe;
 public interface IGroupeService {
 	
 	/**
-	 * Sauvegarde un nouveau groupe
+	 * Sauvegarde un nouveau groupe par l'utilisateur courant
 	 *
 	 * @param nouveauGroupe nouveau groupe
 
 	 * @param token 
 	 */
-	Groupe create(Groupe nouveauGroupe, Integer token);
+	Groupe create(Groupe nouveauGroupe, Integer IdUserFromToken);
 
 
 
@@ -33,11 +33,11 @@ public interface IGroupeService {
 	void update(Groupe groupe);
 
 	/**
-	 * Extrait tous les groupes existants
+	 * Extrait tous les groupes associés à un utilisateur
 	 *
 	 * @return
 	 */
-	List<Groupe> getGroupes();
+	List<Groupe> getGroupes(int idUser);
 
 	/**
 	 * Récupération d'un groupe par son id

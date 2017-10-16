@@ -31,8 +31,8 @@ public class RestGroupeController {
 	
 	@RequestMapping(path = "/", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	@ResponseBody
-	public List<Groupe> getGroupeWithRepository() {
-		return groupeServiceRepository.getGroupes();
+	public List<Groupe> getGroupeWithRepository(@RequestHeader(value="Authorization") String token) {
+		return groupeServiceRepository.getGroupes(Tokens.getIdFromToken(token));
 	}
 	
 	// ******* GET GROUPE BY ID ********** //

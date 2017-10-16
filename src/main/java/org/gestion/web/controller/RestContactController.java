@@ -43,8 +43,8 @@ public class RestContactController {
 	
 	@RequestMapping(path = "/contact", method = RequestMethod.POST, consumes = "application/json;charset=UTF-8")
 	@ResponseBody
-	public Contact createContact(@RequestBody Contact contact) {
-		return contactServiceRepository.create(contact);
+	public void createContact(@RequestBody Contact contact, @PathVariable("idGroup") String idGroup) {
+		contactServiceRepository.create(contact, Integer.parseInt(idGroup));
 	}
 
 	// ********** UPDATE CONTACT ********** //

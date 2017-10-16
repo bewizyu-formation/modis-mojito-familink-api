@@ -1,6 +1,11 @@
 package org.gestion.entite;
 
+import java.util.HashSet;
+import java.util.Set;
+
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class Contact {
@@ -27,9 +32,9 @@ public class Contact {
 	@Column(name= "GRAVATAR_URL", length=60)
 	private String gravatar;
 	
-	@ManyToOne
-	@JoinColumn(name="GROUPE_ID", nullable = true)
-	private Groupe groupe;
+	@JsonIgnore
+	@ManyToMany(mappedBy="contacts", fetch = FetchType.EAGER)
+	private Set<Groupe> groupes = new HashSet<Groupe>();
 	
 
 	/**
@@ -54,31 +59,31 @@ public class Contact {
 	}
 
 	/**
-	 * @return the nom
+	 * @return the lastName
 	 */
-	public String getNom() {
+	public String getLastName() {
 		return lastName;
 	}
 
 	/**
-	 * @param nom the nom to set
+	 * @param lastName the lastName to set
 	 */
-	public void setNom(String nom) {
-		this.lastName = nom;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
 	/**
-	 * @return the prenom
+	 * @return the firstName
 	 */
-	public String getPrenom() {
+	public String getFirstName() {
 		return firstName;
 	}
 
 	/**
-	 * @param prenom the prenom to set
+	 * @param firstName the firstName to set
 	 */
-	public void setPrenom(String prenom) {
-		this.firstName = prenom;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
 	/**
@@ -131,17 +136,17 @@ public class Contact {
 	}
 
 	/**
-	 * @return the group
+	 * @return the groupes
 	 */
-	public Groupe getGroup() {
-		return groupe;
+	public Set<Groupe> getGroupes() {
+		return groupes;
 	}
 
 	/**
-	 * @param group the group to set
+	 * @param groupes the groupes to set
 	 */
-	public void setGroup(Groupe group) {
-		this.groupe = group;
+	public void setGroupes(Set<Groupe> groupes) {
+		this.groupes = groupes;
 	}
 	
 	
