@@ -3,6 +3,7 @@ package org.gestion.services;
 import java.util.List;
 
 import org.gestion.entite.User;
+import org.gestion.exceptions.FunctionalException;
 
 /**
  * Interface qui liste les méthodes de persistence pour la classe {@link User} que doit posséder une classe
@@ -18,7 +19,7 @@ public interface IUserService {
 	 *
 	 * @param nouveauUser nouveau user
 	 */
-	User create(User nouveauUser);
+	User create(User nouveauUser) throws FunctionalException;
 
 	/**
 	 * Mise à jour d'un user

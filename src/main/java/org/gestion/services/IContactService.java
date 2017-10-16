@@ -18,7 +18,7 @@ public interface IContactService {
 	 *
 	 * @param nouveauContact nouveau contact
 	 */
-	void create(Contact nouveauContact, Integer id);
+	void create(Contact nouveauContact, Integer id) throws Exception;
 
 	/**
 	 * Mise à jour d'un contact

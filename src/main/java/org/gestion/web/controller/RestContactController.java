@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/groups/{idGroup}")
-public class RestContactController {
+public class RestContactController extends AbstractRestController{
 
 	@Autowired
 	@Qualifier("contactServiceRepository")
@@ -43,8 +43,12 @@ public class RestContactController {
 	
 	@RequestMapping(path = "/contact", method = RequestMethod.POST, consumes = "application/json;charset=UTF-8")
 	@ResponseBody
-	public void createContact(@RequestBody Contact contact, @PathVariable("idGroup") String idGroup) {
-		contactServiceRepository.create(contact, Integer.parseInt(idGroup));
+	public void createContact(@RequestBody Contact contact, @PathVariable("idGroup") String idGroup) throws Exception {
+		try {
+			contactServiceRepository.create(contact, Integer.parseInt(idGroup));
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 
 	// ********** UPDATE CONTACT ********** //

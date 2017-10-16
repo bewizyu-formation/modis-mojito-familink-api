@@ -14,9 +14,6 @@ public interface ContactRepository extends JpaRepository<Contact, Integer> {
 	@Query(value="SELECT * FROM contact INNER JOIN coordonnees ON contact.COORDONNEES_ID = coordonnees.id WHERE EMAIL = ?1", nativeQuery = true )
 	Contact findByCoordonneesEmail(String email);
 	
-//	@Query(value="SELECT COUNT(*) > 0 FROM contact INNER JOIN coordonnees ON contact.COORDONNEES_ID = coordonnees.id WHERE EMAIL = ?1", nativeQuery = true )
-//	boolean existsEmail(String email); 
-	
 	@Query(value = "DROP * FROM contact WHERE GROUPE_ID = ?1", nativeQuery = true)
 	void deleteByGroupId(int groupeId);
 

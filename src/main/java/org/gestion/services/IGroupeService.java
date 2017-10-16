@@ -3,6 +3,7 @@ package org.gestion.services;
 import java.util.List;
 
 import org.gestion.entite.Groupe;
+import org.gestion.exceptions.FunctionalException;
 
 /**
  * Interface qui liste les méthodes de persistence pour la classe {@link Groupe} que doit posséder une classe
@@ -19,7 +20,7 @@ public interface IGroupeService {
 
 	 * @param token 
 	 */
-	Groupe create(Groupe nouveauGroupe, Integer IdUserFromToken);
+	Groupe create(Groupe nouveauGroupe, Integer IdUserFromToken) throws FunctionalException;
 
 
 

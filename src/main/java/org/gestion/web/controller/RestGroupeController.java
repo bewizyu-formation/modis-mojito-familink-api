@@ -3,6 +3,7 @@ package org.gestion.web.controller;
 import java.util.List;
 
 import org.gestion.entite.Groupe;
+import org.gestion.exceptions.FunctionalException;
 import org.gestion.services.IGroupeService;
 
 import org.gestion.utils.Tokens;
@@ -21,7 +22,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/groups")
-public class RestGroupeController {
+public class RestGroupeController extends AbstractRestController{
 	
 	@Autowired
 	@Qualifier("groupeServiceRepository")
@@ -48,10 +49,13 @@ public class RestGroupeController {
 	
 	@RequestMapping(path = "/", method = RequestMethod.POST, consumes = "application/json;charset=UTF-8")
 
-	public Groupe createGroupe(@RequestBody Groupe newGroupe, @RequestHeader String Authorization) {
+	public Groupe createGroupe(@RequestBody Groupe newGroupe, @RequestHeader String Authorization) throws Exception {
 		Integer idUser = Tokens.getIdFromToken(Authorization);
-		System.out.println("##############################################################################################"+idUser);
-		return groupeServiceRepository.create(newGroupe,idUser);
+		try {
+			return groupeServiceRepository.create(newGroupe,idUser);
+		} catch (FunctionalException e) {
+			throw e;
+		}
 
 	}
 	
