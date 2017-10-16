@@ -3,6 +3,7 @@ package org.gestion.web.controller;
 import java.util.List;
 
 import org.gestion.entite.User;
+import org.gestion.exceptions.FunctionalException;
 import org.gestion.services.IUserService;
 import org.gestion.utils.Tokens;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/user")
-public class RestUserController {
+public class RestUserController extends AbstractRestController{
 
 	@Autowired
 	@Qualifier("userServiceRepository")
@@ -36,8 +37,12 @@ public class RestUserController {
 	// ********** CREATE USER ********** //
 
 	@RequestMapping(path = "/create", method = RequestMethod.POST, consumes = "application/json;charset=UTF-8")
-	public User createUser(@RequestBody User newUser) {
-		return userServiceRepository.create(newUser);
+	public User createUser(@RequestBody User newUser) throws Exception {
+		try {
+			return userServiceRepository.create(newUser);
+		} catch (Exception e) {
+			throw e;
+		}
 	}
 	
 	// ****** UPDATE USER PASSWORD ***** //

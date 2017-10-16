@@ -3,6 +3,7 @@ package org.gestion.services;
 import java.util.List;
 
 import org.gestion.entite.Groupe;
+import org.gestion.exceptions.FunctionalException;
 
 /**
  * Interface qui liste les méthodes de persistence pour la classe {@link Groupe} que doit posséder une classe
@@ -13,13 +14,13 @@ import org.gestion.entite.Groupe;
 public interface IGroupeService {
 	
 	/**
-	 * Sauvegarde un nouveau groupe
+	 * Sauvegarde un nouveau groupe par l'utilisateur courant
 	 *
 	 * @param nouveauGroupe nouveau groupe
 
 	 * @param token 
 	 */
-	Groupe create(Groupe nouveauGroupe, Integer token);
+	Groupe create(Groupe nouveauGroupe, Integer IdUserFromToken) throws FunctionalException;
 
 
 
@@ -33,11 +34,11 @@ public interface IGroupeService {
 	void update(Groupe groupe);
 
 	/**
-	 * Extrait tous les groupes existants
+	 * Extrait tous les groupes associés à un utilisateur
 	 *
 	 * @return
 	 */
-	List<Groupe> getGroupes();
+	List<Groupe> getGroupes(int idUser);
 
 	/**
 	 * Récupération d'un groupe par son id
