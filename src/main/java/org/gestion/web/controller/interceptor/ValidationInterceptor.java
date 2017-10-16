@@ -4,8 +4,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.gestion.utils.Tokens;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
@@ -15,11 +13,16 @@ public class ValidationInterceptor extends HandlerInterceptorAdapter {
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler)
 			throws Exception {
 		
+		if (request.getMethod().equals("OPTIONS")) {
+			return true;
+		}
+		
 		System.out.println("***************Interceptor fonctionne*****************");
 		System.out.println(request.getRequestURL());
 		String token = request.getHeader("Authorization");
-		if (Tokens.isValid(token)){
-		return true;
+		System.out.println("=============== tokenDansHeader est : " + token);
+		if (Tokens.isValid(token)){ //token != null && 
+			return true;
 		}
 		else {
 			System.out.println("************ERROR***************");

@@ -9,7 +9,7 @@ public class Date {
 	}
 	
 	public static long getTimeUnix(){
-		long timeofnow = (System.currentTimeMillis() / 1000l) ;
+		long timeofnow = (System.currentTimeMillis() / 1000l);
 		System.out.println("current time: " + timeofnow);
 		return timeofnow;
 	}

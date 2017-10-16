@@ -31,6 +31,7 @@ public class RestGroupeController {
 	
 	@RequestMapping(path = "/", method = RequestMethod.GET, produces = "application/json;charset=UTF-8")
 	@ResponseBody
+	//@CrossOrigin(origins = "*", allowedHeaders = "Authorization")
 	public List<Groupe> getGroupeWithRepository() {
 		return groupeServiceRepository.getGroupes();
 	}
