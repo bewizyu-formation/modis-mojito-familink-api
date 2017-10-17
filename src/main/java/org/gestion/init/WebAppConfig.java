@@ -7,7 +7,6 @@ import org.gestion.web.controller.interceptor.ValidationInterceptor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -40,14 +39,14 @@ public class WebAppConfig {
 			public void addCorsMappings(CorsRegistry registry) {
 				registry.addMapping("/**")
 						.allowedOrigins("*")
-						.allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE")
-						.allowedHeaders("Content-Type");
+						.allowedMethods("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS")
+						.allowedHeaders("Content-Type", "Authorization"); //pas besoin d'adder Authorization pour que ça marche
 			}
 			
 			@Override
 			public void addInterceptors(InterceptorRegistry registry) {
 				registry.addInterceptor(getValidationInterceptor()).excludePathPatterns("/login").excludePathPatterns("/user/create"); //à changer, page de login
-			}
+			}	
 		};
 	}
 }

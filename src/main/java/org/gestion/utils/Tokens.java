@@ -6,7 +6,9 @@ public class Tokens {
 
 	public static String generateToken(Integer userId) {
 
+
 		String tokenClear = userId + "-" + Date.getTimeStamp(150);
+
 		String token = null;
 		try {
 			token = HandleB64.codeB64(tokenClear);
@@ -26,11 +28,22 @@ public class Tokens {
 		return idUser;
 	}
 
+	
 	public static Long getTimeStampFromToken(String token) {
+		
+		if(token == null) {
+			return 0L;
+		}
 		String tokenClear = HandleB64.decodeB64(token);
-		String[] parts = tokenClear.split("-");
-		Long timeStamp = Long.parseLong(parts[1]);
-		System.out.println("token time   :" + parts[1]);
+		
+		Long timeStamp = 0L;
+		
+		 if(tokenClear.matches("\\d+-\\d+"))
+		 {
+			String[] parts = tokenClear.split("-");
+			timeStamp = Long.parseLong(parts[1]);
+			System.out.println("token time   :" + parts[1]);
+		 }
 		return timeStamp;
 	}
 
