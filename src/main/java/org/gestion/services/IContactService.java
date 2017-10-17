@@ -14,11 +14,11 @@ import org.gestion.entite.Contact;
 public interface IContactService {
 	
 	/**
-	 * Sauvegarde un nouveau contact
+	 * Sauvegarde un nouveau contact dans le groupe courant
 	 *
 	 * @param nouveauContact nouveau contact
 	 */
-	Contact create(Contact nouveauContact);
+	void create(Contact nouveauContact, Integer id) throws Exception;
 
 	/**
 	 * Mise à jour d'un contact
@@ -28,12 +28,12 @@ public interface IContactService {
 	void update(Contact contact);
 
 	/**
-	 * Extrait tous les contacts existants
+	 * Extrait tous les contacts associés à un groupe
 	 *
 	 * @return
 	 */
 
-	List<Contact> getContacts(int groupeId);
+	List<Contact> getContacts(int idGroupe);
 
 
 

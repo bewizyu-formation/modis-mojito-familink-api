@@ -6,7 +6,9 @@ public class Tokens {
 
 	public static String generateToken(Integer userId) {
 
-		String tokenClear = userId + "-" + Date.getTimeStamp(15);
+
+		String tokenClear = userId + "-" + Date.getTimeStamp(150);
+
 		String token = null;
 		try {
 			token = HandleB64.codeB64(tokenClear);
