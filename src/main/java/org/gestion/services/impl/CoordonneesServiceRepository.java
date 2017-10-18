@@ -27,11 +27,11 @@ public class CoordonneesServiceRepository implements ICoordonneeService {
 		final Coordonnees toUpdate = coordonneesRepository.findOne(coordonnees.getId());
 		
 		if (toUpdate != null){
-			toUpdate.setAdresse(coordonnees.getAdresse());
-			toUpdate.setCodePostal(coordonnees.getCodePostal());
+			toUpdate.setAddress(coordonnees.getAddress());
+			toUpdate.setZipCode(coordonnees.getZipCode());
 			toUpdate.setEmail(coordonnees.getEmail());
 			toUpdate.setPhone(coordonnees.getPhone());
-			toUpdate.setVille(coordonnees.getVille());
+			toUpdate.setCity(coordonnees.getCity());
 			coordonneesRepository.save(toUpdate);
 		}
 
