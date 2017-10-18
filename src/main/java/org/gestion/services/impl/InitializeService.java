@@ -3,6 +3,7 @@ package org.gestion.services.impl;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.apache.commons.codec.digest.DigestUtils;
 import org.gestion.entite.Contact;
 import org.gestion.entite.Coordonnees;
 import org.gestion.entite.Groupe;
@@ -12,6 +13,7 @@ import org.gestion.entite.Profil;
 import org.gestion.entite.User;
 import org.gestion.exceptions.FunctionalException;
 import org.gestion.services.IInitializeService;
+import org.gestion.utils.Tokens;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -48,7 +50,8 @@ public class InitializeService implements IInitializeService {
 
 		Coordonnees coordonnees1 = new Coordonnees("adresse 1", 69001, "ville 1", "0123456789", "mail_1@mail.com");
 		Contact contact1 = new Contact("nom 1", "prenom 1", profil1, coordonnees1, lienGravatar);
-		User user1 = new User(contact1, "passeword 1");
+		String passwordMD5 = DigestUtils.md5Hex("passeword 1");
+		User user1 = new User(contact1, passwordMD5);
 		try {
 			userServiceRepository.create(user1);
 		} catch (FunctionalException e2) {
@@ -89,7 +92,8 @@ public class InitializeService implements IInitializeService {
 
 		Coordonnees coordonnees4 = new Coordonnees("adresse 4", 69004, "ville 4", "0123456789", "mail_4@mail.com");
 		Contact contact4 = new Contact("nom 4", "prenom 4", profil3, coordonnees4, lienGravatar);
-		User user2 = new User(contact4, "passeword 2");
+		passwordMD5 = DigestUtils.md5Hex("passeword 2");
+		User user2 = new User(contact4, passwordMD5);
 		try {
 			userServiceRepository.create(user2);
 		} catch (FunctionalException e2) {
@@ -130,7 +134,8 @@ public class InitializeService implements IInitializeService {
 
 		Coordonnees coordonnees7 = new Coordonnees("adresse 7", 69007, "ville 7", "0123456789", "mail_7@mail.com");
 		Contact contact7 = new Contact("nom 7", "prenom 7", profil2, coordonnees7, lienGravatar);
-		User user3 = new User(contact7, "passeword 3");
+		passwordMD5 = DigestUtils.md5Hex("passeword 3");
+		User user3 = new User(contact7, passwordMD5);
 		try {
 			userServiceRepository.create(user3);
 		} catch (FunctionalException e) {
