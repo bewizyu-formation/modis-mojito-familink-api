@@ -37,54 +37,54 @@ public class Coordonnees {
 	 * @param phone
 	 * @param email
 	 */
-	public Coordonnees(String adresse, Integer codePostal, String ville, String phone, String email) {
-		this.address = adresse;
-		this.zipCode = codePostal;
-		this.city = ville;
+	public Coordonnees(String address, Integer zipCode, String city, String phone, String email) {
+		this.address = address;
+		this.zipCode = zipCode;
+		this.city = city;
 		this.phone = phone;
 		this.email = email;
 	}
 
 	/**
-	 * @return the adresse
+	 * @return the address
 	 */
-	public String getAdresse() {
+	public String getAddress() {
 		return address;
 	}
 
 	/**
-	 * @param adresse the adresse to set
+	 * @param address the address to set
 	 */
-	public void setAdresse(String adresse) {
-		address = adresse;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 	/**
-	 * @return the codePostal
+	 * @return the zipCode
 	 */
-	public Integer getCodePostal() {
+	public Integer getZipCode() {
 		return zipCode;
 	}
 
 	/**
-	 * @param codePostal the codePostal to set
+	 * @param zipCode the zipCode to set
 	 */
-	public void setCodePostal(Integer codePostal) {
-		this.zipCode = codePostal;
+	public void setZipCode(Integer zipCode) {
+		this.zipCode = zipCode;
 	}
 
 	/**
-	 * @return the ville
+	 * @return the city
 	 */
-	public String getVille() {
+	public String getCity() {
 		return city;
 	}
 
 	/**
-	 * @param ville the ville to set
+	 * @param city the city to set
 	 */
-	public void setVille(String ville) {
-		this.city = ville;
+	public void setCity(String city) {
+		this.city = city;
 	}
 
 	/**

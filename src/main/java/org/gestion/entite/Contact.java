@@ -29,7 +29,7 @@ public class Contact {
 	@JoinColumn(name= "COORDONNEES_ID")
 	private Coordonnees coordonnees;
 	
-	@Column(name= "GRAVATAR_URL", length=60)
+	@Column(name= "GRAVATAR_URL", length=100)
 	private String gravatar;
 	
 	@JsonIgnore
